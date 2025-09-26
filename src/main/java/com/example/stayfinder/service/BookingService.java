@@ -51,6 +51,28 @@ public class BookingService {
         return bookingRepository.save(booking);
     }
 
+    /**
+     * Create a demo booking without running availability checks or payment.
+     * Used by the demo flow to quickly populate the My Bookings page.
+     */
+    public Booking createDemoBooking(User user, Homestay homestay) {
+        java.time.LocalDate checkIn;
+        java.time.LocalDate checkOut;
+        if (homestay.getAvailableDates() != null && !homestay.getAvailableDates().isEmpty()) {
+            checkIn = homestay.getAvailableDates().get(0);
+            checkOut = homestay.getAvailableDates().size() > 1
+                    ? homestay.getAvailableDates().get(1)
+                    : checkIn.plusDays(1);
+        } else {
+            checkIn = java.time.LocalDate.now();
+            checkOut = checkIn.plusDays(1);
+        }
+
+        Booking booking = new Booking(user, homestay, checkIn, checkOut, Booking.Status.CONFIRMED);
+        // Persist directly for demo purposes (bypass availability/payment)
+        return bookingRepository.save(booking);
+    }
+
     public List<Booking> getBookingsByUser(User user) {
         return bookingRepository.findByUserId(user.getId());
     }

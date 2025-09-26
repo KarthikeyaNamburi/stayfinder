@@ -21,7 +21,17 @@ public class HomestayController {
     }
 
     @GetMapping("/search")
-    public String showSearchForm() {
+    public String showSearchForm(org.springframework.ui.Model model) {
+        // Load Andhra Pradesh districts from classpath JSON and expose to the template as 'districts'
+        try (java.io.InputStream is = getClass().getResourceAsStream("/data/andhra_districts.json")) {
+            if (is != null) {
+                com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+                java.util.List<String> districts = mapper.readValue(is, new com.fasterxml.jackson.core.type.TypeReference<java.util.List<String>>() {});
+                model.addAttribute("districts", districts);
+            }
+        } catch (Exception e) {
+            System.err.println("Could not load districts: " + e.getMessage());
+        }
         return "search";
     }
 
@@ -31,6 +41,20 @@ public class HomestayController {
                                   @RequestParam LocalDate checkOut,
                                   Model model) {
         List<Homestay> homestays = homestayService.findAvailableByLocationAndDates(location, checkIn, checkOut);
+
+        // If no results, provide a small sample homestay so the UI shows default data
+        if (homestays == null || homestays.isEmpty()) {
+            com.example.stayfinder.model.User sampleHost = new com.example.stayfinder.model.User("sample@example.com", "", "Sample Host", com.example.stayfinder.model.User.Role.HOST);
+            Homestay sample = new Homestay(
+                    sampleHost,
+                    (location == null || location.isEmpty()) ? "Sample Location" : location + " - Sample",
+                    "A cozy sample homestay to help you explore the site. This is default sample data shown when no real listings match the search.",
+                    1200.0,
+                    java.util.Arrays.asList(checkIn, checkIn.plusDays(1))
+            );
+            homestays = java.util.Arrays.asList(sample);
+        }
+
         model.addAttribute("homestays", homestays);
         model.addAttribute("location", location);
         model.addAttribute("checkIn", checkIn);
