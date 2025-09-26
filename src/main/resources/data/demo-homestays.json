@@ -1,0 +1,106 @@
+[
+  {
+    "hostEmail": "host1@example.com",
+    "hostName": "Sita Rao",
+    "location": "Visakhapatnam",
+    "description": "Sea-view cottage with friendly host and local breakfast.",
+    "price": 1800.0,
+    "availableDates": ["2025-10-01","2025-10-02","2025-10-03","2025-10-04"]
+  },
+  {
+    "hostEmail": "host2@example.com",
+    "hostName": "Ramesh Kumar",
+    "location": "Vijayawada",
+    "description": "Traditional Andhra home close to market and transport.",
+    "price": 1200.0,
+    "availableDates": ["2025-10-05","2025-10-06","2025-10-07"]
+  },
+  {
+    "hostEmail": "host3@example.com",
+    "hostName": "Anita Devi",
+    "location": "Guntur",
+    "description": "Cozy family stay with garden and local cuisine.",
+    "price": 1000.0,
+    "availableDates": ["2025-10-10","2025-10-11","2025-10-12"]
+  },
+  {
+    "hostEmail": "host4@example.com",
+    "hostName": "K. Srinivas",
+    "location": "Tirupati",
+    "description": "Comfortable room near the temple area, ideal for pilgrims.",
+    "price": 2200.0,
+    "availableDates": ["2025-10-15","2025-10-16"]
+  },
+  {
+    "hostEmail": "host5@example.com",
+    "hostName": "Latha B",
+    "location": "Kurnool",
+    "description": "Rustic village home with authentic meals and farm visits.",
+    "price": 800.0,
+    "availableDates": ["2025-10-20","2025-10-21","2025-10-22"]
+  },
+  {
+    "hostEmail": "host6@example.com",
+    "hostName": "Madhav",
+    "location": "Anantapur",
+    "description": "Quiet homestay, good for working remote and relaxing.",
+    "price": 900.0,
+    "availableDates": ["2025-11-01","2025-11-02","2025-11-03"]
+  },
+  {
+    "hostEmail": "host7@example.com",
+    "hostName": "Geetha",
+    "location": "Nellore",
+    "description": "Beachside homestay with boat trips available.",
+    "price": 1400.0,
+    "availableDates": ["2025-11-10","2025-11-11","2025-11-12"]
+  },
+  {
+    "hostEmail": "host8@example.com",
+    "hostName": "Prakash",
+    "location": "Rajahmundry",
+    "description": "Riverfront home with traditional boats and local snacks.",
+    "price": 1500.0,
+    "availableDates": ["2025-11-15","2025-11-16","2025-11-17"]
+  },
+  {
+    "hostEmail": "host9@example.com",
+    "hostName": "Sunita",
+    "location": "Srikakulam",
+    "description": "Comfortable coastal homestay with beach walks.",
+    "price": 1100.0,
+    "availableDates": ["2025-11-20","2025-11-21","2025-11-22"]
+  },
+  {
+    "hostEmail": "host10@example.com",
+    "hostName": "Vikram",
+    "location": "Vizianagaram",
+    "description": "Spacious rooms and local guided tours of the area.",
+    "price": 1300.0,
+    "availableDates": ["2025-12-01","2025-12-02"]
+  },
+  {
+    "hostEmail": "host11@example.com",
+    "hostName": "Radha",
+    "location": "Eluru",
+    "description": "Charming heritage house with curated local experiences.",
+    "price": 1250.0,
+    "availableDates": ["2025-12-05","2025-12-06","2025-12-07"]
+  },
+  {
+    "hostEmail": "host12@example.com",
+    "hostName": "Rajan",
+    "location": "Nandyal",
+    "description": "Hillside homestay with beautiful sunrise views.",
+    "price": 1150.0,
+    "availableDates": ["2025-12-10","2025-12-11"]
+  },
+  {
+    "hostEmail": "host13@example.com",
+    "hostName": "Meena",
+    "location": "Prakasam",
+    "description": "Modern homestay with fast wifi and comfortable beds.",
+    "price": 1350.0,
+    "availableDates": ["2025-12-15","2025-12-16","2025-12-17"]
+  }
+]
